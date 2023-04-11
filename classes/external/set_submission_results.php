@@ -32,7 +32,7 @@ class set_submission_results extends \external_api
             LEFT JOIN {question} q ON qa.questionid = q.id
             WHERE 
                 q.qtype = \'appstester\' AND
-                qas.state = \'complete\' AND
+                qas.state = \'invalid\' AND
                 qas.id = ' . $id . '
             ORDER BY qas.id
         ', null, MUST_EXIST);
@@ -47,7 +47,7 @@ class set_submission_results extends \external_api
         $updated_submission_step = new \stdClass();
         $updated_submission_step->id = $id;
         $updated_submission_step->fraction = $fraction;
-        $updated_submission_step->state = 'invalid';
+        $updated_submission_step->state = 'complete';
 
         $result_step_data = new \stdClass();
         $result_step_data->attemptstepid = $submission_step->id;
@@ -120,7 +120,7 @@ class set_submission_results extends \external_api
 
                 // CASE 2
                 $updated_submission_step->fraction = max($fraction, $submission_step->fraction);
-                $updated_submission_step->state = 'invalid';
+                $updated_submission_step->state = 'complete';
             } // else test attempt is still active and QBehaviour will take care of grading the step
         }
 
