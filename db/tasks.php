@@ -13,4 +13,14 @@ $tasks = array(
         'month' => '*',
         'disabled' => 0
     ),
+    array(
+        'classname' => '\qtype_appstester\task\check_submissions_duration',
+        'blocking' => 0,
+        'minute' => '*/5',
+        'hour' => '*',
+        'day' => '*',
+        'dayofweek' => '*',
+        'month' => '*',
+        'disabled' => 0
+    ),
 );
