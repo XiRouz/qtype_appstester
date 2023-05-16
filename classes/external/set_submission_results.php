@@ -77,9 +77,14 @@ class set_submission_results extends \external_api
             $result_step_data->id = $step_with_result->id;
         }
 
+        $quiz_update_needed = false;
         if ($finishing_step) { // if finishing step is found, usual regrade is happening
             $updated_finishing_step = new \stdClass();
             $updated_finishing_step->id = $finishing_step->id;
+
+            if ($finishing_step->state == 'finished') {
+                $quiz_update_needed = true;
+            }
 
             $updated_finishing_step->fraction = max($fraction, $finishing_step->fraction);
             if ($updated_finishing_step->fraction < 0.000001) {
@@ -147,6 +152,11 @@ class set_submission_results extends \external_api
             $incheck_step_insert->name = '-incheck';
             $incheck_step_insert->value = 0;
             $DB->insert_record('question_attempt_step_data', $incheck_step_insert);
+        }
+
+        if ($quiz_update_needed) {
+            $quiz = \qtype_appstester\helper::get_quiz_by_qas_id($submission_step->id);
+            \qtype_appstester\helper::update_quiz_results($quiz);
         }
 
         return true;
