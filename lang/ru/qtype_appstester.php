@@ -6,8 +6,12 @@ $string['pluginnameadding'] = 'Добавление теста на реализ
 $string['pluginnameediting'] = 'Редактирование теста на реализацию приложения';
 $string['pluginnamesummary'] = 'Данный вопрос позволяет попросить ученика написать программу, которая при отправке решения будет автоматически проверена и оценена';
 $string['android_template_zip_file'] = 'ZIP файл с шаблоном';
+$string['android_submission_zip_file'] = 'ZIP файл с решением';
 $string['check_options'] = 'Параметры проверки';
 $string['checker_system_name'] = 'Сервис проверки';
+$string['test_name'] = 'Название теста';
+$string['test_result'] = 'Результат';
+$string['html_result'] = '<p>Набрано {$a->grade} баллов из {$a-totalgrade}</p>';
 $string['hideresult_whileactive'] = 'Скрывать результаты теста, пока попытка в прогрессе';
 $string['hideresult_afterfinish'] = 'Скрывать результаты теста после завершения попытки';
 $string['maxbytes'] = 'Максимальный размер файла решения студента';
@@ -16,6 +20,16 @@ $string['no_files_submitted'] = 'Решение было отправлено н
 $string['same_response_submitted'] = 'Отправленное решение идентично предыдущему. Проверьте архив и попробуйте ещё раз.';
 $string['app_is_tested'] = '<b>Приложение протестировано</b>';
 $string['submission_is_in_queue'] = 'Ваше решение находится в очереди. Следите за статусом тестирования, обновляя страницу.';
+$string['summarise_response'] = 'решение задачи';
+
+// STATUSES
+$string['android_checker:checking_started'] = 'Checking started';
+$string['android_checker:unzip_files'] = 'Submission is extracting';
+$string['android_checker:validate_submission'] = 'Checking if submission is valid';
+$string['android_checker:gradle_build'] = 'Building application';
+$string['android_checker:install_application'] = 'Installing application';
+$string['android_checker:test'] = 'Testing application';
+$string['android_checker:default'] = 'Checking status unknown';
 
 // SETTINGS
 $string['appstester_settings'] = 'Настройки AppsTester';

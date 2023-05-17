@@ -25,18 +25,19 @@ class get_submission extends \external_api
 
         self::validate_parameters(self::get_submission_parameters(), array('id' => $id, 'included_file_hashes' => $included_file_hashes));
 
-        $submission_step = $DB->get_record_sql('
+        $sql = "
             SELECT
                 qas.*, qa.questionusageid, qa.slot
             FROM {question_attempt_steps} qas
-            LEFT JOIN {question_attempts} qa ON qas.questionattemptid = qa.id
-            LEFT JOIN {question} q ON qa.questionid = q.id
+            JOIN {question_attempts} qa ON qas.questionattemptid = qa.id
+            JOIN {question} q ON qa.questionid = q.id
             WHERE 
-                q.qtype = \'appstester\' AND
-                qas.state = \'invalid\' AND
-                qas.id = ' . $id . '
-            ORDER BY qas.id
-        ', null, MUST_EXIST);
+                q.qtype = 'appstester' AND
+                qas.state = 'invalid' AND
+                qas.id = :qas_id
+        ";
+        $params = ['qas_id' => $id];
+        $submission_step = $DB->get_record_sql($sql, $params, MUST_EXIST);
 
         if ($submission_step === null) {
             throw new \coding_exception('Submission step not found');

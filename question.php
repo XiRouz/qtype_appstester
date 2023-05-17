@@ -62,7 +62,7 @@ class qtype_appstester_question extends question_graded_automatically {
     }
 
     public function summarise_response(array $response): string {
-        return 'решение задачи';
+        return get_string('summarise_response', 'qtype_appstester');
     }
 
     public function get_validation_error(array $response) {
