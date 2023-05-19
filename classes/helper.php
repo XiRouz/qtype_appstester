@@ -10,6 +10,10 @@
 namespace qtype_appstester;
 defined('MOODLE_INTERNAL') || die();
 
+require_once($CFG->dirroot . '/question/engine/lib.php');
+require_once($CFG->dirroot . '/mod/quiz/locallib.php');
+require_once($CFG->dirroot . '/mod/quiz/lib.php');
+
 /**
  * Helper class.
  *
@@ -46,6 +50,5 @@ class helper
         \quiz_update_all_attempt_sumgrades($quiz_cm);
         \quiz_update_all_final_grades($quiz_cm);
         \quiz_update_grades($quiz_cm);
-        mtrace("Updated grades for quiz \"" . $quiz_cm->name . "\".");
     }
 }

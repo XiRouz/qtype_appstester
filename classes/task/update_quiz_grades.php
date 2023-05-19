@@ -29,6 +29,7 @@ class update_quiz_grades extends \core\task\scheduled_task
             $quiz_cm = $DB->get_record('quiz', ['id' => $quiz->quiz_id]);
             if ($quiz_cm) {
                 \qtype_appstester\helper::update_quiz_results($quiz_cm);
+                mtrace("Updated grades for quiz \"" . $quiz_cm->name . "\".");
 
                 $update_object = new \stdClass();
                 $update_object->id = $quiz->id;

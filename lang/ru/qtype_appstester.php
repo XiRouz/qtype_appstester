@@ -11,7 +11,7 @@ $string['check_options'] = 'Параметры проверки';
 $string['checker_system_name'] = 'Сервис проверки';
 $string['test_name'] = 'Название теста';
 $string['test_result'] = 'Результат';
-$string['html_result'] = '<p>Набрано {$a->grade} баллов из {$a-totalgrade}</p>';
+$string['html_result'] = '<p>Набрано {$a->grade} баллов из {$a->totalgrade}</p>';
 $string['hideresult_whileactive'] = 'Скрывать результаты теста, пока попытка в прогрессе';
 $string['hideresult_afterfinish'] = 'Скрывать результаты теста после завершения попытки';
 $string['maxbytes'] = 'Максимальный размер файла решения студента';
@@ -23,13 +23,13 @@ $string['submission_is_in_queue'] = 'Ваше решение находится 
 $string['summarise_response'] = 'решение задачи';
 
 // STATUSES
-$string['android_checker:checking_started'] = 'Checking started';
-$string['android_checker:unzip_files'] = 'Submission is extracting';
-$string['android_checker:validate_submission'] = 'Checking if submission is valid';
-$string['android_checker:gradle_build'] = 'Building application';
-$string['android_checker:install_application'] = 'Installing application';
-$string['android_checker:test'] = 'Testing application';
-$string['android_checker:default'] = 'Checking status unknown';
+$string['android_checker:checking_started'] = 'Началась проверка работы';
+$string['android_checker:unzip_files'] = 'Производится распаковка решения';
+$string['android_checker:validate_submission'] = 'Проверяется целостность решения';
+$string['android_checker:gradle_build'] = 'Приложение собирается';
+$string['android_checker:install_application'] = 'Приложение устанавливается для последующего тестирования';
+$string['android_checker:test'] = 'Приложение тестируется';
+$string['android_checker:default'] = 'Статус проверки неизвестен';
 
 // SETTINGS
 $string['appstester_settings'] = 'Настройки AppsTester';
