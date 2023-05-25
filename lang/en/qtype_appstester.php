@@ -11,7 +11,7 @@ $string['check_options'] = 'Checker parameters';
 $string['checker_system_name'] = 'Checker service';
 $string['test_name'] = 'Test name';
 $string['test_result'] = 'Result';
-$string['html_result'] = '<p>You got {$a->grade} points out of {$a-totalgrade}</p>';
+$string['html_result'] = '<p>You got {$a->grade} points out of {$a->totalgrade}</p>';
 $string['hideresult_whileactive'] = 'Hide results while test attempt is active';
 $string['hideresult_afterfinish'] = 'Hide results after test attempt is finished';
 $string['maxbytes'] = 'Maximum student\'s submission file size';
@@ -23,13 +23,13 @@ $string['submission_is_in_queue'] = 'Your submission is in queue. Monitor the pr
 $string['summarise_response'] = 'task\'s solution';
 
 // STATUSES
-$string['android_checker:checking_started'] = 'Началась проверка работы';
-$string['android_checker:unzip_files'] = 'Производится распаковка решения';
-$string['android_checker:validate_submission'] = 'Проверяется целостность решения';
-$string['android_checker:gradle_build'] = 'Приложение собирается';
-$string['android_checker:install_application'] = 'Приложение устанавливается для последующего тестирования';
-$string['android_checker:test'] = 'Приложение тестируется';
-$string['android_checker:default'] = 'Статус проверки неизвестен';
+$string['android_checker:checking_started'] = 'Checking started';
+$string['android_checker:unzip_files'] = 'Submission is extracting';
+$string['android_checker:validate_submission'] = 'Checking if submission is valid';
+$string['android_checker:gradle_build'] = 'Building application';
+$string['android_checker:install_application'] = 'Installing application';
+$string['android_checker:test'] = 'Testing application';
+$string['android_checker:default'] = 'Checking status unknown';
 
 // SETTINGS
 $string['appstester_settings'] = 'AppsTester settings';
